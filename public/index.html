@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Object Drawer</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <style>@import 'https://fonts.googleapis.com/css?family=Dosis:300,400';</style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Computação Gráfica</h1>
+
+      <select class="objtype">
+        <option value="0" selected>Selecione</option>
+        <option value="1" >Circulo</option>
+        <option value="2" >Retangulo</option>
+        <option value="3">Linha</option>
+      </select>
+      <section>
+        <label for="inputs">Informe os valores</label>
+        <label><strong>Posição no Canvas</strong></label>
+        <div class="inputs" id="inputs">
+          <span>
+            <label for="x1">X:</label><span></span>
+            <input type="text" name="name" value="" id="x1">
+            <label for="y1">Y:</label>
+            <input type="text" name="name" value="" id="y1">
+            <label for="radius" class="circle">Radius:</label>
+            <input type="text" name="radius" value="" class="circle" id="r">
+          </span>
+        <label class="hidden"><strong>Tamanho das Linhas</strong></label>
+          <span class="hidden">
+            <label for="x1">X:</label>
+            <input type="text" name="name" value="" id="x2">
+            <label for="y1">Y:</label>
+            <input type="text" name="name" value="" id="y2">
+          </span>
+        </div>
+
+        <label for="color">Escolha a cor do elemento:</label>
+        <input type="color" name="colorpicker" value="#000000" id="colorpick">
+        <button type="button" name="button" id="btnDraw">Desenhar</button>
+      </section>
+      <section>
+        <h3><strong>Transformações</strong></h3>
+        <div class="transform">
+          <span class="transforms">
+            <label for="scale">Scale</label>
+            <input type="text" name="scale" value="" id="scale">
+            <button type="button" name="button" id="scaleBtn">Aplicar</button>
+          </span>
+          <span class="transforms">
+            <label for="scale">Rotate</label>
+            <input type="text" name="scale" value="" id="rotate">
+            <button type="button" name="button" id="rotateBtn">Aplicar</button>
+            </span>
+          <span class="transforms">
+            <label for="scale">Translate</label>
+            <input type="text" name="scale" value="" id="translateX">
+            <input type="text" name="name" value="" id="translateY">
+            <button type="button" name="button" id="translateBtn">Aplicar</button>
+          </span>
+          <span class="transforms">
+              <span class="transformFields">
+                  <label for="scale">Transform</label>
+                  <div class="fieldsDiv">
+                      <label for="A">Horizontal scaling</label>
+                      <input type="text" name="scale" value="" id="transformA">
+                  </div>
+                 <div class="fieldsDiv">
+                    <label for="B">Horizontal skewing</label>
+                    <input type="text" name="scale" value="" id="transformB">
+                 </div>
+                 <div class="fieldsDiv">
+                    <label for="">Vertical skewing</label>
+                    <input type="text" name="scale" value="" id="transformC">
+                 </div>
+                 <div class="fieldsDiv">
+                     <label for="">Vertical scaling</label>
+                     <input type="text" name="scale" value="" id="transformD">
+                 </div>
+                 <div class="fieldsDiv">
+                     <label for=""> 	Horizontal moving</label>
+                     <input type="text" name="scale" value="" id="transformE">
+                 </div>
+                 <div class="fieldsDiv">
+                     <label for="">Vertical moving</label>
+                     <input type="text" name="scale" value="" id="transformF">
+                 </div>
+                  <button type="button" name="button" id="transformBtn">Aplicar</button>
+
+              </span>
+
+          </span>
+
+        </div>
+
+      </section>
+
+    </header>
+    <main>
+
+      <canvas id="canvas">
+      This text will appear if your browser don't support canvas
+      </canvas>
+    </main>
+
+  </body>
+  <script src="./scripts/jquery-3.1.0.min.js"></script>
+  <script src='./scripts/script.js'></script>
+</html>
