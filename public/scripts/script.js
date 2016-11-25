@@ -2,7 +2,8 @@
   'use strict';
   var c = document.getElementById("canvas"),
       ctx = c.getContext("2d");
-
+      $(".scl").hide();
+      $(".rtate").hide();
   var options = $(".objtype");
     options.change( function() {
       var val = $(".objtype option:selected").index();
@@ -38,6 +39,17 @@
 
         }
       });
+
+    $('#sclView').click( function () {
+        $(".scl").show();
+        $(".rtate").hide();
+    });
+
+    $('#rotView').click( function () {
+        $(".scl").hide();
+        $(".rtate").show();
+        console.log("sclView");
+    });
 
 
 
@@ -132,7 +144,8 @@
           x2 = $('#x2').val(),
           y2 = $('#y2').val(),
           r = $("#r").val(),
-          color = $("#colorpick").val();
+          color = $("#colorpick").val(),
+          dg = $("#degrees").val();
 
       var val = $(".objtype option:selected").index();
       var rotate = $("#rotate").val();
@@ -141,7 +154,7 @@
           ctx.beginPath();
           ctx.fillStyle = color;
           ctx.strokeStyle = color;
-          ctx.rotate(rotate*Math.PI/180);
+          ctx.rotate(dg*Math.PI/180);
           ctx.arc(x1, y1, r, 0, Math.PI*2, true);
           ctx.stroke();
           ctx.fill();
@@ -151,7 +164,7 @@
         if (x1 && x2 && y1 && y2) {
           ctx.beginPath();
           ctx.fillStyle= color;
-          ctx.rotate(rotate*Math.PI/180);
+          ctx.rotate(dg*Math.PI/180);
           ctx.fillRect(x1 , y1, x2, y2);
           ctx.stroke();
         };
@@ -159,7 +172,7 @@
         if (x1 && x2 && y1 && y2) {
           ctx.beginPath();
           ctx.strokeStyle= color;
-          ctx.rotate(rotate*Math.PI/180);
+          ctx.rotate(dg*Math.PI/180);
           ctx.moveTo(x1, y1);
           ctx.lineTo(x2, y2);
           ctx.stroke();
@@ -266,6 +279,10 @@
     //
     // });
 
+        $("#clear").click( function () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            console.log("clear canvas");
+        });
 
 
 }());

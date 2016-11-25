@@ -47,17 +47,42 @@
       </section>
       <section>
         <h3><strong>Transformações</strong></h3>
+        <div class="chooseBtn">
+            <button type="button" name="button" id="sclView">Scale</button>
+            <button type="button" name="button" id="rotView">Rotate</button>
+            <!-- <button type="button" name="button" id="translateView">Translate</button> -->
+            <!-- <button type="button" name="button" id="transfView">Transform</button> -->
+        </div>
+        <div class="scl">
+            <div class="transform">
+              <span class="transforms">
+                <label for="scale">Scale</label>
+                <input type="text" name="scale" value="" id="scale">
+                <button type="button" name="button" id="scaleBtn">Aplicar</button>
+              </span>
+            </div>
+        </div>
+        <div class="rtate">
+            <div class="transform">
+              <span class="transforms">
+                <label for="scale">Rotate degrees</label>
+                <!-- <input type="text" name="scale" value="" id="rotate"> -->
+                <!-- <label for="">Degrees</label> -->
+                <input type="text" name="degrees" value="" id="degrees">
+                <button type="button" name="button" id="rotateBtn">Aplicar</button>
+                </span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
         <div class="transform">
-          <span class="transforms">
-            <label for="scale">Scale</label>
-            <input type="text" name="scale" value="" id="scale">
-            <button type="button" name="button" id="scaleBtn">Aplicar</button>
-          </span>
-          <span class="transforms">
-            <label for="scale">Rotate</label>
-            <input type="text" name="scale" value="" id="rotate">
-            <button type="button" name="button" id="rotateBtn">Aplicar</button>
-            </span>
+
           <!-- <span class="transforms">
             <label for="scale">Translate</label>
             <input type="text" name="scale" value="" id="translateX">
@@ -98,6 +123,7 @@
           </span>
 
         </div>
+        <button type="button" name="button" id="clear">Clear canvas</button>
 
       </section>
 
