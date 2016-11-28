@@ -159,3 +159,12 @@ h1 {
 	font-size: 20px;
 	font-weight: 400;
 }
+
+#texto {
+	width: 200px;
+}
+
+.texts {
+	display: flex;
+	flex-direction: row;
+}
