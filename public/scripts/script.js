@@ -1,9 +1,29 @@
 (function () {
   'use strict';
+  
+  
   var c = document.getElementById("canvas"),
       ctx = c.getContext("2d");
       $(".scl").hide();
       $(".rtate").hide();
+	  
+	var style =  $("#objStyle");
+		style.change( function() {
+			var val = $("#objStyle option:selected").index();
+			console.log("changed");
+			switch (val) {
+				case 0:
+				case 1:
+				$("#outline").hide();
+				$("#elementColor").show();
+				
+				break;
+				case 2:
+				$("#outline").show();
+				$("#elementColor").show();
+			}
+			
+		});
   var options = $(".objtype");
     options.change( function() {
       var val = $(".objtype option:selected").index();
@@ -58,8 +78,11 @@
         y1 = $('#y1').val(),
         x2 = $('#x2').val(),
         y2 = $('#y2').val(),
+		t1 = $('#t1').val(),
+		t2 = $('#t2').val(),
         r = $("#r").val(),
-        color = $("#colorpick").val();
+        color = $("#colorpick").val(),
+		texto = $("#texto").val();
 
     var val = $(".objtype option:selected").index();
       if (val === 1) {
@@ -89,7 +112,15 @@
         };
       };
 
-
+		if (texto) {
+			ctx.font = "10px Georgia";
+			ctx.fillStyle = "black";
+			ctx.fillText(texto, t1, t2);
+		};
+		
+	
+		
+		
     });
 
 
